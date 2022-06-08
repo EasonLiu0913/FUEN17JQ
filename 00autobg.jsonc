@@ -1,0 +1,7 @@
+{
+  "Print to console": {
+    "prefix": "autobg",
+    "body": "<!-- <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script> -->\n<script>\n function getRandomInt(max) {\n    return Math.floor(Math.random() * Math.floor(max - 50) + 100);\n}\n\nfunction getRBGA() {\n    return `linear-gradient(135deg, rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.5), rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.8)`\n}\n\nconst elements = document.querySelectorAll('.autobg');\n\nArray.from(elements).forEach((element, index) => {\n    element.style.backgroundImage = getRBGA();\n});\n\n// $('.autobg').each(function (index, currentElement) {\n//     currentElement.style.backgroundImage = getRBGA();\n// });\n</script>",
+    "description": "Log output to console"
+  }
+}

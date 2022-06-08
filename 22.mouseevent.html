@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse event</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <input type="checkbox">
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.box').click(function () {
+            console.log('box clicked.');
+        });
+
+        $('.box').dblclick(function () {
+            console.log('box dblclicked.');
+        });
+        $('.box').contextmenu(function () {
+            console.log('box contextmenu.');
+        });
+
+        $('.box').mousedown(function () {
+            console.log('box mousedown.');
+        });
+        $('.box').mouseup(function () {
+            console.log('box mouseup.');
+        });
+        $('.box').mouseenter(function () {
+            console.log('box mouseenter.');
+        });
+        $('.box').mouseleave(function () {
+            console.log('box mouseleave.');
+        });
+
+        $('.box').hover(function () {
+            console.log('box hover enter.');
+        }, function () {
+            console.log('box hover leave.');
+        });
+
+        $('input').click(function () {
+            console.log('checkbox clicked.');
+        })
+    </script>
+</body>
+
+</html>
