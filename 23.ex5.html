@@ -12,7 +12,8 @@
         .wrap {
             width: 800px;
             height: 400px;
-            overflow: hidden;
+            /* overflow: hidden; */
+            position: relative;
         }
 
         ul.train {
@@ -33,19 +34,50 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .slider-dots {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .slider-dots li {
+            width: 40px;
+            height: 10px;
+            border: 2px solid #fff;
+            margin: 0 4px;
+        }
     </style>
 </head>
 
 <body>
     <div class="wrap">
-        <ul class="train">
+        <ul class="train list-unstyled">
             <li><img src="./imgs/slide1.jpg" alt=""></li>
             <li><img src="./imgs/slide2.jpg" alt=""></li>
             <li><img src="./imgs/slide3.jpg" alt=""></li>
             <li><img src="./imgs/slide4.jpg" alt=""></li>
             <li><img src="./imgs/slide5.jpg" alt=""></li>
         </ul>
+
+        <ul class="slider-dots list-unstyled">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.slider-dots li').mouseenter(function () {
+            // console.log('hi');
+            $(this).css('background', '#fff')
+        })
+    </script>
 </body>
 
 </html>
