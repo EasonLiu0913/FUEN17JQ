@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>children</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col">
+                col1
+                <span class="col-children">span???</span>
+            </div>
+            <div class="col">col2
+                <span>span2???</span>
+            </div>
+            <div class="col">col3</div>
+            <span class="box">box1</span>
+            <div class="col">col4</div>
+            <div class="col">col5</div>
+            <span class="box">box2</span>
+            <div class="col">col6</div>
+            <span class="box">box3</span>
+        </div>
+        <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col1</div>
+            <div class="col">col1</div>
+            <span>span</span>
+            <div class="col">col1</div>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        $('.row').eq(1).find('span').next().next().css('background', 'red')
+    </script>
+</body>
+
+</html>
