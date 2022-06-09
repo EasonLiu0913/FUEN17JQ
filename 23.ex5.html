@@ -12,8 +12,9 @@
         .wrap {
             width: 800px;
             height: 400px;
-            /* overflow: hidden; */
+            overflow: hidden;
             position: relative;
+            border: 5px solid rgb(235, 174, 53);
         }
 
         ul.train {
@@ -22,11 +23,15 @@
             height: 100%;
             list-style: none;
             padding: 0;
+            border: 3px solid green;
+            transform: translateX(-0px);
+            transition: .5s;
         }
 
         .train li {
             flex-basis: 0;
             flex-grow: 1;
+            border: 3px solid red;
         }
 
         .train img {
@@ -73,9 +78,26 @@
 
     <script src="./js/jquery-3.6.0.js"></script>
     <script>
+        // 滑鼠移動到某個 li 身上，圖片會移動到指定數字的位置。
+
+        // 1.EVENT 事件 Mouseenter
+        // 2.移動圖片
+        // 3.移動到指定位置(必須知道是第幾li)
+        // 4.拿到 li 數字，並且修改圖片CSS，確定移動到正確位置
+        // 5.bug fix: li 白色指示點不能全白
+
+
         $('.slider-dots li').mouseenter(function () {
             // console.log('hi');
             $(this).css('background', '#fff')
+            console.log($(this).index());
+            // 必須知道變數的運用，計算出正確移動的數字
+            // index 0 -> 火車移動到 0px
+            // index 1 -> 火車移動到 -800px
+            // index 2 -> 火車移動到 -1600px
+            const n = $(this).index();
+            $('ul.train').css('transform', `translateX(${n * -800}px)`);
+
         })
     </script>
 </body>
