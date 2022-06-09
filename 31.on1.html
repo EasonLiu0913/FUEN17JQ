@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on 1</title>
+</head>
+
+<body>
+    <button id="add">Add</button>
+
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // li.addEventLisener('click',function(){})
+        // $('li').on('click', function () {
+        //     console.log('li clicked', $(this).text());
+        // })
+
+        $('ul').on('click', 'li', function () {
+            console.log('li clicked', $(this).text());
+        })
+
+
+        $('#add').on('click', function () {
+            $('ul').append('<li>item4</li>')
+        })
+    </script>
+</body>
+
+</html>
