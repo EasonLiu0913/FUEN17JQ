@@ -89,7 +89,13 @@
 
         $('.slider-dots li').mouseenter(function () {
             // console.log('hi');
+            // 不能只考慮自己!
+            //  0 ->  1,2,3,4 都要變透明
+            //  1 ->  0,2,3,4 都要變透明
+            //  我自己 -> 除了我以外的兄弟姊妹都要變透明。
             $(this).css('background', '#fff')
+            $(this).siblings().css("background", "transparent")
+
             console.log($(this).index());
             // 必須知道變數的運用，計算出正確移動的數字
             // index 0 -> 火車移動到 0px
