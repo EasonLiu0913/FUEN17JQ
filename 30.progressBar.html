@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0px;
+            height: 3000px;
+            transition: .5s;
+        }
+
+        .wrap {
+            height: 50px;
+            background-color: #ccc;
+            position: fixed;
+            width: 100%;
+        }
+
+        .progress {
+            width: 20%;
+            height: 100%;
+            background-color: pink;
+        }
+
+        .wrap2 {
+            margin-top: 1000px;
+            background: #aaa;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* height: 200px; */
+            opacity: 0;
+            transition: 1s;
+            transform: translateY(200px);
+        }
+
+        .box {
+            width: 33.333333%;
+            padding-left: 10px;
+            padding-right: 10px;
+            /* min-height: 100px; */
+            /* outline: 1px solid red; */
+        }
+
+        .img-wrap img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="progress"></div>
+    </div>
+
+    <div class="wrap2">
+        <div class="box">
+            <div class="img-wrap">
+                <img src="https://cdn.pixabay.com/photo/2022/05/12/20/59/tulips-7192345_960_720.jpg" alt="">
+            </div>
+
+            <h3>Flower1</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sed fugiat nulla ipsa pariatur molestias
+                dolores quidem earum iste eos. Beatae quo quisquam deserunt neque accusantium sunt maxime iste eius.</p>
+        </div>
+        <div class="box">
+            <div class="img-wrap">
+                <img src="https://cdn.pixabay.com/photo/2022/03/30/14/01/rose-7101236_960_720.jpg" alt="">
+            </div>
+
+            <h3>Flower2</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sed fugiat nulla ipsa pariatur molestias
+                dolores quidem earum iste eos. Beatae quo quisquam deserunt neque accusantium sunt maxime iste eius.</p>
+        </div>
+        <div class="box">
+            <div class="img-wrap">
+                <img src="https://cdn.pixabay.com/photo/2022/04/22/04/27/tulips-7148773_960_720.jpg" alt="">
+            </div>
+
+            <h3>Flower3</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima sed fugiat nulla ipsa pariatur molestias
+                dolores quidem earum iste eos. Beatae quo quisquam deserunt neque accusantium sunt maxime iste eius.</p>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // TODO:取得閱讀百分比，修改 .progress 的寬度 CSS。
+
+        // 使用時機:上下捲動畫面時。
+        // 1.分子:使用者目前捲動高度是多少
+        // 2.分母:總高度是多少
+        // 3.算出百分比
+        // 4.修改 $('.progress').css('width', 百分比);
+        // const percentage = 100 / 100;
+        // $('.progress').css('width', percentage * 100 + '%');
+
+        $(window).scroll(function () {
+            console.log('scrollTop:', $(window).scrollTop());
+            console.log('body height:', $('body').height());
+            console.log('window height:', $(window).height());
+            console.log('body - window height:', $('body').height() - $(window).height());
+            console.log('percentage:', $(window).scrollTop() / ($('body').height() - $(window).height()));
+
+            const percentage = $(window).scrollTop() / ($('body').height() - $(window).height());
+            $('.progress').css('width', percentage * 100 + '%');
+
+            if ($(window).scrollTop() > 500) {
+                $('body').css('background', 'orange');
+                $('.wrap2').css('opacity', '1').css('transform', 'translateY(0px)');
+            }
+            else {
+                $('body').css('background', 'none');
+                $('.wrap2').css('opacity', '0').css('transform', 'translateY(200px)');
+            }
+        })
+    </script>
+</body>
+
+</html>
