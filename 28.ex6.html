@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form>
+                <div class="form-row">
+                    <div class="form-group">
+                        <select name="city" id="city">
+                            <option value="0">基隆</option>
+                            <option value="1">台北</option>
+                            <option value="2">新北</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select name="district" id="district">
+                            <option value="0">七堵</option>
+                            <option value="1">中正</option>
+                            <option value="2">暖暖</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // 使用者選擇左邊的下拉式選單，依據使用者選擇不同的城市，動態修改右邊為符合該城市的區域資料。
+        // 1.必須知道使用者選甚麼城市
+        // 2.必須從資料中拿取該城市的區域資料
+        // 3.將資料個別修改到 option 內的文字(用迴圈)
+        // 4.功能開始的時機點，應該是使用者變動左邊城市的時候
+
+        let districtArray = [
+            ['七堵', '中正', '暖暖'],
+            ['中正', '大安', '信義'],
+            ['蘆洲', '三重', '新店'],
+        ];
+
+        // 4.觸發時機點
+        $('#city').change(function () {
+            console.log('city changed.', $('#city').val());
+            console.log(districtArray[$('#city').val()]);
+
+            // 1.city +  2.get districtNames
+            const districtNames = districtArray[$('#city').val()];
+
+            // 3.用迴圈個別修改 options 
+            // 方法一
+            // for (let i = 0; i < districtNames.length; i++) {
+            //     $('#district > option').eq(i).text(districtNames[i])
+            // }
+
+            // 方法二
+            $('#district > option').each(function (index, elem) {
+                console.log(index, elem);
+                $(elem).text(districtNames[index]);
+            })
+
+            // $('#district > option').eq(0).text(districtNames[0])
+            // $('#district > option').eq(1).text(districtNames[1])
+            // $('#district > option').eq(2).text(districtNames[2])
+        })
+    </script>
+</body>
+
+</html>

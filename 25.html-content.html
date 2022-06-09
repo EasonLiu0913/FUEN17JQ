@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello World123</h1>
+    <input type="text" value="input Value">
+
+    <ul>
+        <li><a href="#">link1</a></li>
+        <li><a href="#">link2</a></li>
+        <li><a href="#">link3</a></li>
+        <li><a href="#">link4</a></li>
+        <li><a href="#">link5</a></li>
+    </ul>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        // 純文字改值 
+        $('h1').text('123')
+        // 純文字取值
+        console.log($('h1').text())
+
+        $('input').val('val value')
+        console.log($('input').val())
+
+        // 修改包含 HTML 標籤的內容
+        $('ul').html('<h1>Hi UL</h1>')
+        // 拿到包含 HTML 標籤的內容
+        console.log('ul:', $('ul').html())
+    </script>
+</body>
+
+</html>
