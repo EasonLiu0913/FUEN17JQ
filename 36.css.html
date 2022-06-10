@@ -69,25 +69,33 @@
         //     background: "blue",
         // };
 
-        // $('button').click(function () {
-        //     if ($('.box').css('background-color') == 'rgb(255, 170, 255)') {
-        //         // $('.box').css('background-color', 'blue').css('width', '500px');
-        //         $('.box').css(style1);
-        //     }
-        //     else {
-        //         // $('.box').css('background-color', 'rgb(255, 170, 255)').css('width', '200px');
+        $('button').click(function () {
+            if ($('.box').css('background-color') == 'rgb(255, 170, 255)') {
+                // $('.box').css('background-color', 'blue').css('width', '500px');
+                $('.box').css(style1);
+            }
+            else {
+                // $('.box').css('background-color', 'rgb(255, 170, 255)').css('width', '200px');
 
-        //         // var style = {
-        //         //     width: "200px",
-        //         //     background: "rgb(255, 170, 255)",
-        //         // };
-        //         $('.box').css(styleDefault);
-        //     }
+                // var style = {
+                //     width: "200px",
+                //     background: "rgb(255, 170, 255)",
+                // };
+                $('.box').css(style0);
+            }
+        })
+
+        // $('button').click(function () {
+        //     $('.box').css('width', '+=100')
         // })
 
-        $('button').click(function () {
-            $('.box').css('width', '+=100')
-        })
+        // $('button').click(function () {
+        //     //     $('.box').css('width', '+=100')
+
+        //     const box = document.querySelector('.box');
+
+        //     console.log(window.getComputedStyle(box, null).width);
+        // })
     </script>
 </body>
 

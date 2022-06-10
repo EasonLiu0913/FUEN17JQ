@@ -56,6 +56,54 @@
             </button>
         </div>
     </div>
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        const speed = 150;
+
+        $('#right').click(function () {
+            console.log('hi right');
+            // $('.box').css('left', `+=${speed}`)
+            move('right');
+        })
+
+        $('#left').click(function () {
+            console.log('hi left');
+            // $('.box').css('left', `-=${speed}`)
+            move('left');
+        })
+
+        function move(direction) {
+            const variable = {
+                right: '+=',
+                left: '-='
+            }
+            $('.box').css('left', variable[direction] + speed)
+        }
+
+        function moveV(direction) {
+            const variable = {
+                down: '+=',
+                up: '-='
+            }
+            $('.box').css('top', variable[direction] + speed)
+        }
+
+
+        $(document).on('keydown', function (e) {
+            console.log('hi keydown', e.keyCode);
+            if (e.keyCode === 39) {
+                // TO RIGHT
+                move('right');
+            }
+
+            if (e.keyCode === 37) {
+                // TO RIGHT
+                move('left');
+            }
+
+        })
+    </script>
 </body>
 
 </html>
