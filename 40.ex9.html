@@ -27,9 +27,9 @@
     <div class="container">
         <div class="d-flex justify-content-end">
             <div class="btn-group">
-                <button class="btn btn-info ">S</button>
-                <button class="btn btn-info active">M</button>
-                <button class="btn btn-info ">L</button>
+                <button class="btn btn-info btn-s">S</button>
+                <button class="btn btn-info active btn-m">M</button>
+                <button class="btn btn-info btn-l">L</button>
             </div>
         </div>
         <h2>jQuery</h2>
@@ -42,15 +42,46 @@
             dolorum?</p>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="./js/jquery-3.6.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
+    <script>
+        // $('.btn-s').click(function () {
+        //     $('p').removeClass().addClass('fontS');
+        //     $('.btn').removeClass('active');
+        //     $('.btn-s').addClass('active');
+        // })
+        // $('.btn-m').click(function () {
+        //     $('p').removeClass().addClass('fontM');
+        //     $('.btn').removeClass('active');
+        //     $('.btn-m').addClass('active');
+        // })
+        // $('.btn-l').click(function () {
+        //     $('p').removeClass().addClass('fontL');
+        //     $('.btn').removeClass('active');
+        //     $('.btn-l').addClass('active');
+        // })
+
+        $('.btn').click(function () {
+            console.log('this', $(this));
+
+            if ($(this).is(":contains('S')")) {
+                console.log('S btn clicked');
+            }
+            if ($(this).is(":contains('M')")) {
+                console.log('M btn clicked');
+            }
+            if ($(this).is(":contains('L')")) {
+                console.log('L btn clicked');
+            }
+
+        }); 
+    </script>
 </body>
 
 </html>
